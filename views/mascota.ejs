@@ -1,24 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mascota</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="style/pet_style.css" rel="stylesheet">
-    </head>
-    <body>
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h2 class="card-title">Perfil de <%= mascota.name %></h2>
-              <p class="card-text">Dueño: <%= mascota.owner %></p>
-              <p class="card-text">Contacto: <%= mascota.contact %></p>
-              <p class="card-text">Direccion: <%= mascota.address %></p>
-            </div>
-          </div>
-    </body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta de Mascota</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    
+    <div class="text-center w-800">
+        
+        <h1 id="name" class="text-5xl font-bold mb-4 pb-32">Mi nombre es<br><%= mascota.name %></h1>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <div id="cont2" class="relative shadow-lg rounded-lg p-6 w-80 text-center">
+            <div class="absolute -top-20 left-1/2 transform -translate-x-1/2 rounded-full pb-px">
+                <img src="<%= mascota.photo %>" alt="Mascota" class="w-36 h-36 rounded-full border-4 shadow-md">
+            </div>
+
+            <div class="mt-12">
+                <div class="space-y-8">
+                    <a id="btn" href="https://www.google.com/maps?q=<%= mascota.location %>" class="block w-full py-2 rounded-lg shadow"><b>Ubicación</b></a>
+                    <a id="btn" href="#" class="block w-full py-2 rounded-lg shadow"><b>Contacto</b></a>
+                    <a id="btn" href="#" class="block w-full py-2 rounded-lg shadow"><b>Contacto</b></a>
+                    <a id="btn" href="#" class="block w-full py-2 rounded-lg shadow"><b>Contacto</b></a>
+                </div>
+            </div>
+            <div class="flex justify-between mt-6 text-sm text-gray-600 font-semibold">
+                <span id="text"><b>Mascota No.<br><%= mascota.id %></b></span>
+                <a id="text" href="#" class="text-black"><b>Actualizar datos</b></a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<style>
+    body{
+        background-color: #E5D2B8;
+    }
+    #btn{
+        color: #725C3A;
+        background-color: #809671;
+        text-decoration: solid;
+    }
+    #name{
+        color: #725C3A;
+    }
+    #cont2{
+        background-color: #B3B792;
+        
+    }
+    img{
+        border-color: #725C3A;
+    }
+    #text{
+        color: #725C3A;
+    }
+</style>
 
 </html>
